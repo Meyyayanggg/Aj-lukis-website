@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AJ Lukis Resources | Pelan Rumah & 3D Design</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f5f2;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background: #151515;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #b21f2d;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+.hero {
+    min-height: 600px;
+    padding: 90px 7%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80")
+    center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 75px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #c12736;
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: #b21f2d;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 75px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.calculator {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.08);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.calculate {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    background: #b21f2d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f5f1ed;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+
+.result h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 38px;
+    font-weight: bold;
+    color: #b21f2d;
+    margin: 8px 0;
+}
+
+.note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 15px;
+}
+
+.whatsapp {
+    display: inline-block;
+    margin-top: 20px;
+    background: #159447;
+    color: white;
+    padding: 13px 22px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.services {
+    background: #151515;
+    color: white;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service {
+    padding: 30px;
+    border: 1px solid #444;
+    border-radius: 10px;
+}
+
+.service h3 {
+    color: #d32939;
+    margin-bottom: 10px;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.portfolio div {
+    height: 250px;
+    border-radius: 10px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+
+.contact {
+    text-align: center;
+    background: #b21f2d;
+    color: white;
+}
+
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+@media(max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 70px 7%;
+    }
+
+    .form-grid,
+    .service-grid,
+    .portfolio {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        AJ <span>LUKIS</span> RESOURCES
+    </div>
+
+    <nav>
+        <a href="#calculator">Harga</a>
+        <a href="#services">Servis</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            DESIGN YOUR<br>
+            <span>DREAM HOME.</span>
+        </h1>
+
+        <p>
+            Pelan rumah, 3D render, rekabentuk dan
+            perkhidmatan drafting untuk membantu anda
+            merealisasikan rumah impian.
+        </p>
+
+        <a href="#calculator" class="button">
+            KIRA ANGGARAN HARGA
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="calculator">
+
+    <div class="section-title">
+
+        <h2>Design Fee Calculator</h2>
+
+        <p>
+            Masukkan ukuran rumah untuk mendapatkan
+            anggaran harga design.
+        </p>
+
+    </div>
+
+
+    <div class="calculator">
+
+        <div class="form-grid">
+
+            <div>
+                <label>Lebar Rumah (kaki)</label>
+
+                <input
+                    type="number"
+                    id="width"
+                    placeholder="Contoh: 30"
+                >
+            </div>
+
+
+            <div>
+                <label>Panjang Rumah (kaki)</label>
+
+                <input
+                    type="number"
+                    id="length"
+                    placeholder="Contoh: 50"
+                >
+            </div>
+
+        </div>
+
+
+        <button class="calculate" onclick="calculatePrice()">
+            KIRA ANGGARAN
+        </button>
+
+
+        <div class="result" id="result">
+
+            <h3>KELUASAN RUMAH</h3>
+
+            <div class="price" id="area">
+                0 SQ FT
+            </div>
+
+
+            <h3>ANGGARAN DESIGN FEE</h3>
+
+            <div class="price" id="estimatedPrice">
+                RM0
+            </div>
+
+
+            <p class="note">
+                *Harga di atas adalah anggaran sahaja.
+                Harga sebenar bergantung kepada skop kerja,
+                jenis design dan keperluan projek.
+            </p>
+
+
+            <a
+                id="whatsappButton"
+                class="whatsapp"
+                target="_blank"
+            >
+                WHATSAPP UNTUK HARGA DETAIL
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="services" class="services">
+
+    <div class="section-title">
+
+        <h2>Our Services</h2>
+
+        <p>
+            Perkhidmatan untuk membantu anda dari
+            idea sehingga ke perancangan rumah.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service">
+            <h3>HOUSE DESIGN</h3>
+            <p>
+                Rekabentuk rumah mengikut keperluan,
+                keluasan tanah dan gaya hidup.
+            </p>
+        </div>
+
+
+        <div class="service">
+            <h3>HOUSE DRAFTING</h3>
+            <p>
+                Floor plan, elevation dan drawing
+                untuk tujuan perancangan pembinaan.
+            </p>
+        </div>
+
+
+        <div class="service">
+            <h3>3D RENDER</h3>
+            <p>
+                Visualisasi 3D realistic untuk membantu
+                anda melihat hasil rumah sebelum dibina.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="portfolio">
+
+    <div class="section-title">
+
+        <h2>Our Projects</h2>
+
+        <p>
+            Portfolio design dan projek AJ Lukis Resources.
+        </p>
+
+    </div>
+
+
+    <div class="portfolio">
+
+        <div>PROJECT IMAGE 01</div>
+        <div>PROJECT IMAGE 02</div>
+        <div>PROJECT IMAGE 03</div>
+
+    </div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+    <h2>READY TO DESIGN YOUR HOME?</h2>
+
+    <p>
+        Hubungi AJ Lukis Resources untuk consultation
+        dan harga quotation yang lebih detail.
+    </p>
+
+    <br>
+
+    <a
+        href="https://wa.me/60104412266"
+        class="button"
+        target="_blank"
+    >
+        WHATSAPP 010-441 2266
+    </a>
+
+</section>
+
+
+<footer>
+
+    AJ LUKIS RESOURCES<br>
+    Pelan • 3D • Rekabentuk • Perancangan
+
+</footer>
+
+
+<script>
+
+function calculatePrice() {
+
+    let width = parseFloat(
+        document.getElementById("width").value
+    );
+
+    let length = parseFloat(
+        document.getElementById("length").value
+    );
+
+
+    if (!width || !length || width <= 0 || length <= 0) {
+
+        alert("Sila masukkan lebar dan panjang rumah.");
+
+        return;
+    }
+
+
+    let area = width * length;
+
+    let price = 0;
+
+    let priceText = "";
+
+
+    /*
+       ANGGARAN HARGA
+       Berdasarkan contoh harga AJ Lukis Resources.
+
+       500 - 1000 sqft = RM1.00/sqft
+       1500 - 2000 sqft = RM0.90/sqft
+       2500 - 3000 sqft = RM0.80/sqft
+
+       Range yang belum ditetapkan
+       akan diarahkan kepada WhatsApp.
+    */
+
+
+    if (area >= 500 && area <= 1000) {
+
+        price = area * 1.00;
+
+        priceText = "RM1.00 / SQ FT";
+
+    }
+
+    else if (area >= 1500 && area <= 2000) {
+
+        price = area * 0.90;
+
+        priceText = "RM0.90 / SQ FT";
+
+    }
+
+    else if (area >= 2500 && area <= 3000) {
+
+        price = area * 0.80;
+
+        priceText = "RM0.80 / SQ FT";
+
+    }
+
+    else if (area > 2000 && area < 2500) {
+
+        price = 750;
+
+        priceText = "Anggaran pakej RM750";
+
+    }
+
+    else if (area > 3000 && area <= 4500) {
+
+        price = 750;
+
+        priceText = "Anggaran pakej RM750";
+
+    }
+
+    else {
+
+        price = null;
+
+    }
+
+
+    document.getElementById("area").innerText =
+        area.toLocaleString() + " SQ FT";
+
+
+    if (price !== null) {
+
+        document.getElementById("estimatedPrice").innerText =
+            "RM" + price.toLocaleString();
+
+    } else {
+
+        document.getElementById("estimatedPrice").innerText =
+            "WhatsApp Untuk Anggaran";
+
+    }
+
+
+    let message =
+        "Hi AJ Lukis Resources, saya nak bertanya tentang design rumah.%0A%0A" +
+        "Lebar: " + width + " kaki%0A" +
+        "Panjang: " + length + " kaki%0A" +
+        "Keluasan: " + area.toLocaleString() + " sqft%0A%0A" +
+        "Mohon quotation / harga detail. Terima kasih.";
+
+
+    document.getElementById("whatsappButton").href =
+        "https://wa.me/60104412266?text=" + message;
+
+
+    document.getElementById("result").style.display =
+        "block";
+}
+
+</script>
+
+</body>
+</html>
